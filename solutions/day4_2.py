@@ -23,8 +23,8 @@ def parse_cards(file):
 	return cards
 
 
-with open('../puzzle-inputs/day4input.txt', 'r') as file:
-# with open('../test-inputs/day4testinput.txt', 'r') as file:
+# with open('../puzzle-inputs/day4input.txt', 'r') as file:
+with open('../test-inputs/day4testinput.txt', 'r') as file:
 	card_total = 0
 	cards = parse_cards(file)
 
@@ -37,7 +37,7 @@ with open('../puzzle-inputs/day4input.txt', 'r') as file:
 				new_card = next(j for j in cards if j['id'] == card['id'] + i)
 				total_cards += get_total_cards(new_card)
 			return total_cards
-		
+	
 	for card in cards:
 		card_total += get_total_cards(card)
 		print(card, card_total)
